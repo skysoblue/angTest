@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AngularJS</title>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+ 
+<body>
+<div class="box auto">
+<div ng-app="" ng-init="color1='red';color2='green';color3='blue';
+                      person={name:'OneWayJesus',skill:['MongoDB','Express','AngularJS','Node.js']}">
+                 <p>
+                         color1: <span ng-bind="color1"></span><br>
+                         color2: <span ng-bind="color2"></span><br>
+                         color3: <span ng-bind="color3"></span>
+                 </p>
+                 <p>
+                         name: <span ng-bind="person.name"></span><br>
+                 </p>   
+                 <hr>
+                 skill: <span ng-bind="person.skill.length"></span>
+                 <ul>
+                         <li ng-repeat="sk in person.skill">
+                                  <span>{{ sk }}</span>
+                         </li>
+                 </ul>          
+        </div>
+        <hr>
+        <footer style="text-align: center;">
+                 <a href="http://blog.naver.com/agapeuni">http://blog.naver.com/agapeuni</a>
+        </footer>
+</div>
+<script type="text/javascript">
+$(function() {
+	/* joinForm(); */
+});
+var joinForm = function() {
+	var table ="<form id='frm'><table class='tab'>"
+		+ "<tr>"
+		+ "<td style='width:200px'>ID</td>"
+		+ "<td><input type='text' name='userid'/></td></tr>"
+		+ "<tr><td>비밀번호</td>"
+		+ "<td><input type='text' name='password'/></td>"
+		+ "</tr><tr><td>이름</td>"
+		+ "<td><input type='text' name='name'/></td></tr>"
+		+ "<tr><td>이메일</td>"
+		+ "<td><input type='text' name='email'/></td></tr>"
+		+ "<tr><td style='text-align:center' colspan='3'>"
+		+ "<input type='button' id='join' style='width:100px' value='회원가입'>"
+		+ "<input type='button' id='cancel' style='width:100px' value='취 소'>"
+		+ "</td></tr>"
+		+ "</table></form>";
+	$('.box').html(table);
+	$('#join').click(function() {
+		location.href='/hello';
+	});
+}
+</script>
+</body>
+ 
+</html>
